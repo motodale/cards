@@ -7,24 +7,24 @@ public class StandardPlayingCard implements IPlayingCard{
     private Suit cardSuit;
     private Rank cardRank;
 
-    public StandardPlayingCard(Rank aRank, Suit aSuit){
-        aSuit = SPADE;
-        aRank = ACE;
+    public StandardPlayingCard(){
+        cardSuit = Suit.SPADE;
+        cardRank = Rank.ACE;
     }
 
     //default
     public StandardPlayingCard(Suit aSuit, Rank aRank){
-        suit = aSuit;
-        rank = aRank;
+        cardSuit = aSuit;
+        cardRank = aRank;
     }
     @Override
-    public int compareTo(IPlayingCard it) {
-        if (it.getClass() == this.getClass()) {
-            StandardPlayingCard anotherCard = (StandardPlayingCard) it;
+    public int compareTo(IPlayingCard ipc) {
+        if (ipc.getClass() == this.getClass()) {
+            StandardPlayingCard anotherCard = (StandardPlayingCard) ipc;
 
-            if (this.cardRank < anotherCard.cardRank)
+            if (this.cardRank.getNumVal() < anotherCard.cardRank.getNumVal())
                 return -1;
-            else if (this.cardRank > anotherCard.cardRank)
+            else if (this.cardRank.getNumVal() > anotherCard.cardRank.getNumVal())
                 return 1;
             else
                 return 0;

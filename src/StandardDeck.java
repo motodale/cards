@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 
 /**
@@ -9,8 +10,8 @@ public class StandardDeck implements IDeckOfCards {
     public StandardDeck(){
         myCards = new ArrayList<IPlayingCard>();
 
-        for(int j = 0; j<5; j++){
-            for(int i = 1; i <= 12; i++){
+        for(int j = 0; j<4; j++){
+            for(int i = 1; i <= 13; i++){
                 myCards.add(new StandardPlayingCard());
             }
         }
@@ -55,10 +56,31 @@ public class StandardDeck implements IDeckOfCards {
     }
 
     @Override
-    public boolean isEmpty(){
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
+    public void reset(){
+        myCards = new ArrayList<IPlayingCard>();
+
+        for(int j = 0; j < 5; j++){
+            for(int i = 0; i <= 12; i++)
+                myCards.add(new StandardPlayingCard(String.valueOf(i)));
+        }
+        for(int i = 0; i < 20; i++)
+            myCards.add(new StandardPlayingCard(Rank.ACE, Suit.SPADE));
+    }
+
+    @Override
+    public void add(IPlayingCard[] cardsToAdd){
 
     }
 
+    @Override
+    public void add(IDeckOfCards cardsToAdd){
+
+    }
 
 
 
