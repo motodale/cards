@@ -12,7 +12,7 @@ public class StandardHand extends StandardDeck implements IHand{
             else if(this.myCards.size() > otherHand.myCards.size())
                 return 1;
             else
-                return -;
+                return 0;
         }
         return 0;
     }
