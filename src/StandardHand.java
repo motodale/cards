@@ -1,7 +1,17 @@
+import java.util.ArrayList;
+
 /**
  * Created by Dale.
  */
 public class StandardHand extends StandardDeck implements IHand{
+
+    public StandardHand(){
+        StandardHand.reset();
+    }
+
+
+
+
     @Override
     public int compareTo(IHand arg0){
         if(arg0.getClass() == this.getClass()){
@@ -15,6 +25,10 @@ public class StandardHand extends StandardDeck implements IHand{
                 return 0;
         }
         return 0;
+    }
+    @Override
+    public ArrayList reset(){
+        return myCards.clear();
     }
 
 }

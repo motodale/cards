@@ -5,16 +5,21 @@ public class StandardPlayingCard implements IPlayingCard{
     private Suit cardSuit;
     private Rank cardRank;
 
+    //default
     public StandardPlayingCard(){
         cardSuit = Suit.SPADE;
         cardRank = Rank.ACE;
     }
 
-    //default
+
     public StandardPlayingCard(Suit aSuit, Rank aRank){
-        cardSuit = aSuit;
+        cardSuit = aSuit.;
         cardRank = aRank;
     }
+
+
+
+
     @Override
     public int compareTo(IPlayingCard ipc) {
         if (ipc.getClass() == this.getClass()) {
@@ -32,24 +37,26 @@ public class StandardPlayingCard implements IPlayingCard{
             return -1;
         }
     }
+
+
     @Override
     public String toString() {
 
-        return getSuitStr(cardSuit) + getRankStr(cardRank);
+        return  getRankStr(cardRank) + " of " + getSuitStr(cardSuit);
     }
     private String getSuitStr(Suit cardSuit) {
 
         if (cardSuit.equals(Suit.HEART)) {
-            return "Heart";
+            return "Hearts";
         }
         if (cardSuit.equals(Suit.DIAMOND)) {
-            return "Diamond";
+            return "Diamonds";
         }
         if (cardSuit.equals(Suit.SPADE)) {
-            return "Spade";
+            return "Spades";
         }
         if (cardSuit.equals(Suit.CLUB)) {
-            return "Club";
+            return "Clubs";
         }
         else
             return "This is not the cards you're looking for.";

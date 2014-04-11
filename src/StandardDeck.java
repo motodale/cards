@@ -5,10 +5,10 @@ import java.util.ArrayList;
  * Created by Dale.
  */
 public class StandardDeck implements IDeckOfCards {
-    ArrayList<IPlayingCard> myCards;
+    protected ArrayList<IPlayingCard> myCards;
 
     public StandardDeck(){
-        myCards = new ArrayList<IPlayingCard>();
+       myCards = new ArrayList<IPlayingCard>();
 
         for(int j = 0; j<4; j++){
             for(int i = 1; i <= 13; i++){
@@ -101,7 +101,7 @@ public class StandardDeck implements IDeckOfCards {
                 myCards.add(new StandardPlayingCard());
         }
         for(int i = 0; i < 52; i++)
-            myCards.add(new StandardPlayingCard(Suit.SPADE, Rank.ACE));
+            myCards.add(new StandardPlayingCard());
     }
 
     @Override
