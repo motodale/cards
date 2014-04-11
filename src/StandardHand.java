@@ -16,4 +16,5 @@ public class StandardHand extends StandardDeck implements IHand{
         }
         return 0;
     }
+
 }

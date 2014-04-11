@@ -15,7 +15,7 @@ public class StandardDeck implements IDeckOfCards {
                 myCards.add(new StandardPlayingCard());
             }
         }
-        for(int i = 0; i < 52; i++){
+        for(int i = 0; i <= 52; i++){
             myCards.add(new StandardPlayingCard());
         }
     }
@@ -30,7 +30,26 @@ public class StandardDeck implements IDeckOfCards {
     }
 
     @Override
-    public void addCard(IPlayingCard cardToAdd){
+    public IHand[] dealCards(int numOfHands){
+        StandardHand[] someHand = new StandardHand[numOfHands];
+        int counter = 0;
+        while (!this.isEmpty()) {
+            someHand[counter].add(this.drawCard());
+            counter += 1;
+            if (counter >= numOfHands){
+                counter = 0;
+            }
+        }
+        return someHand;
+    }
+
+    @Override
+    public IHand[] dealCards(int numOfHands, int numOfCards){
+
+    }
+
+    @Override
+    public void add(IPlayingCard cardToAdd){
         myCards.add(cardToAdd);
     }
 
@@ -64,12 +83,12 @@ public class StandardDeck implements IDeckOfCards {
     public void reset(){
         myCards = new ArrayList<IPlayingCard>();
 
-        for(int j = 0; j < 5; j++){
-            for(int i = 0; i <= 12; i++)
-                myCards.add(new StandardPlayingCard(String.valueOf(i)));
+        for(int j = 0; j < 4; j++){
+            for(int i = 0; i <= 13; i++)
+                myCards.add(new StandardPlayingCard());
         }
-        for(int i = 0; i < 20; i++)
-            myCards.add(new StandardPlayingCard(Rank.ACE, Suit.SPADE));
+        for(int i = 0; i < 52; i++)
+            myCards.add(new StandardPlayingCard(Suit.SPADE, Rank.ACE));
     }
 
     @Override
