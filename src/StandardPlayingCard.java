@@ -32,9 +32,79 @@ public class StandardPlayingCard implements IPlayingCard{
             return -1;
         }
     }
-    //public String getRankstring(Rank)
+    @Override
+    public String toString() {
+
+        return getSuitStr(cardSuit) + getRankStr(cardRank);
+    }
+    private String getSuitStr(Suit cardSuit) {
+
+        if (cardSuit.equals(Suit.HEART)) {
+            return "Heart";
+        }
+        if (cardSuit.equals(Suit.DIAMOND)) {
+            return "Diamond";
+        }
+        if (cardSuit.equals(Suit.SPADE)) {
+            return "Spade";
+        }
+        if (cardSuit.equals(Suit.CLUB)) {
+            return "Club";
+        }
+        else
+            return "This is not the cards you're looking for.";
+    }
+
+    private String getRankStr(Rank cardRank) {
+
+        if (cardRank.equals(Rank.ACE)) {
+            return "ACE";
+        }
+        if (cardRank.equals(Rank.TWO)) {
+            return "TWO";
+        }
+        if (cardRank.equals(Rank.THREE)) {
+            return "THREE";
+        }
+        if (cardRank.equals(Rank.FOUR)) {
+            return "FOUR";
+        }
+        if (cardRank.equals(Rank.FIVE)) {
+            return "FIVE";
+        }
+        if (cardRank.equals(Rank.SIX)) {
+            return "SIX";
+        }
+        if (cardRank.equals(Rank.SEVEN)) {
+            return "SEVEN";
+        }
+        if (cardRank.equals(Rank.EIGHT)) {
+            return "EIGHT";
+        }
+        if (cardRank.equals(Rank.NINE)) {
+            return "NINE";
+        }
+        if (cardRank.equals(Rank.TEN)) {
+            return "TEN";
+        }
+        if (cardRank.equals(Rank.JACK)) {
+            return "JACK";
+        }
+        if (cardRank.equals(Rank.QUEEN)) {
+            return "QUEEN";
+        }
+        if (cardRank.equals(Rank.KING)) {
+            return "KING";
+        }
+        else {
+            return "ACE";
+        }
+
+    }
+
+
+
+
+
+
 }
-
-
-
-
