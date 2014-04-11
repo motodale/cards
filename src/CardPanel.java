@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-import IPlayingCard;
+//import IPlayingCard;
 
 public class CardPanel extends JPanel
 {

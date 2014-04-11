@@ -45,8 +45,21 @@ public class StandardDeck implements IDeckOfCards {
 
     @Override
     public IHand[] dealCards(int numOfHands, int numOfCards){
+        StandardHand[] someHand = new StandardHand[numOfHands];
+        int totalCards= 0;
+        int counter = 0;
+        while (!this.isEmpty() && (totalCards <= (numOfCards * numOfHands))) {
+            someHand[counter].add(this.drawCard());
+            counter += 1;
+            if (counter >= numOfHands){
+                counter = 0;
+                totalCards = 0;
+            }
+        }
+        return someHand;
 
     }
+//while ( (!this.isEmpty()) && (totalCards <= (numOfHands * numOfCards)) )
 
     @Override
     public void add(IPlayingCard cardToAdd){

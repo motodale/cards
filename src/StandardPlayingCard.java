@@ -32,6 +32,7 @@ public class StandardPlayingCard implements IPlayingCard{
             return -1;
         }
     }
+    //public String getRankstring(Rank)
 }
 
 
