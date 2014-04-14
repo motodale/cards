@@ -52,6 +52,7 @@ public class StandardDeck implements IDeckOfCards {
         IPlayingCard topCard = myCards.get(0);
         myCards.remove(0);
 
+
         return topCard;
     }
 
