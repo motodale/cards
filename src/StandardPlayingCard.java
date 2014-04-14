@@ -13,7 +13,7 @@ public class StandardPlayingCard implements IPlayingCard{
 
 
     public StandardPlayingCard(Suit aSuit, Rank aRank){
-        cardSuit = aSuit.;
+        cardSuit = aSuit;
         cardRank = aRank;
     }
 
@@ -59,7 +59,7 @@ public class StandardPlayingCard implements IPlayingCard{
             return "Clubs";
         }
         else
-            return "This is not the cards you're looking for.";
+            return "This is not the card you're looking for.";
     }
 
     private String getRankStr(Rank cardRank) {

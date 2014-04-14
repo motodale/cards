@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class StandardHand extends StandardDeck implements IHand{
 
     public StandardHand(){
-        StandardHand.reset();
+        //StandardHan;
     }
 
 
@@ -27,8 +27,8 @@ public class StandardHand extends StandardDeck implements IHand{
         return 0;
     }
     @Override
-    public ArrayList reset(){
-        return myCards.clear();
+    public void reset(){
+        myCards.clear();
     }
 
 }

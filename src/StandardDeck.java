@@ -6,18 +6,44 @@ import java.util.ArrayList;
  */
 public class StandardDeck implements IDeckOfCards {
     protected ArrayList<IPlayingCard> myCards;
+    private ArrayList<Suit> suitList = new ArrayList<Suit>();
+    private ArrayList<Rank> rankList = new ArrayList<Rank>();
+
+
 
     public StandardDeck(){
        myCards = new ArrayList<IPlayingCard>();
-
+       suitList = getListOfSuits();
+       rankList = getListOfRanks();
         for(int j = 0; j<4; j++){
-            for(int i = 1; i <= 13; i++){
-                myCards.add(new StandardPlayingCard());
+            for(int i = 0; i <= 12; i++){
+                myCards.add(new StandardPlayingCard(suitList.get(j), rankList.get(i)));
             }
         }
-        for(int i = 0; i <= 52; i++){
-            myCards.add(new StandardPlayingCard());
-        }
+    }
+    private ArrayList<Suit> getListOfSuits() {
+        suitList.add(0, Suit.HEART);
+        suitList.add(1, Suit.DIAMOND);
+        suitList.add(2, Suit.SPADE);
+        suitList.add(3, Suit.CLUB);
+        return suitList;
+    }
+
+    private ArrayList<Rank> getListOfRanks(){
+        rankList.add(0, Rank.ACE);
+        rankList.add(1, Rank.TWO);
+        rankList.add(2, Rank.THREE);
+        rankList.add(3, Rank.FOUR);
+        rankList.add(4, Rank.FIVE);
+        rankList.add(5, Rank.SIX);
+        rankList.add(6, Rank.SEVEN);
+        rankList.add(7, Rank.EIGHT);
+        rankList.add(8, Rank.NINE);
+        rankList.add(9, Rank.TEN);
+        rankList.add(10, Rank.JACK);
+        rankList.add(11, Rank.QUEEN);
+        rankList.add(12, Rank.KING);
+        return rankList;
     }
 
 
@@ -97,11 +123,10 @@ public class StandardDeck implements IDeckOfCards {
         myCards = new ArrayList<IPlayingCard>();
 
         for(int j = 0; j < 4; j++){
-            for(int i = 0; i <= 13; i++)
-                myCards.add(new StandardPlayingCard());
+            for(int i = 0; i <= 12; i++)
+                myCards.add(new StandardPlayingCard(suitList.get(j), rankList.get(i)));
         }
-        for(int i = 0; i < 52; i++)
-            myCards.add(new StandardPlayingCard());
+
     }
 
     @Override
