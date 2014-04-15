@@ -4,8 +4,7 @@ public interface IDeckOfCards
  * Removes the top card from the deck and returns it.
  * @return - The card drawn.
  */
-    public IPlayingCard drawCard();             
-    
+    public IPlayingCard drawCard()throws ArrayIndexOutOfBoundsException;
     /**
      * Adds a card to the existing deck.
      */

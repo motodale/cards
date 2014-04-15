@@ -1,9 +1,10 @@
 /**
  * Created by daletibbetts.
  */
-public class WarCard {
+public class WarCard extends StandardPlayingCard {
 
-    public WarCard(){
+    public WarCard(Suit aSuit , Rank aRank){
+        super();
 
     }
 

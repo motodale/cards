@@ -50,9 +50,13 @@ public class StandardDeck implements IDeckOfCards {
     @Override
     public IPlayingCard drawCard(){
         IPlayingCard topCard = myCards.get(0);
+//        try {
+//            myCards.remove(0);
+//            return topCard;
+//        }catch (ArrayIndexOutOfBoundsException e){
+//            return ;
+//        }
         myCards.remove(0);
-
-
         return topCard;
     }
 
@@ -86,12 +90,8 @@ public class StandardDeck implements IDeckOfCards {
         return someHand;
 
     }
-//while ( (!this.isEmpty()) && (totalCards <= (numOfHands * numOfCards)) )
 
-    @Override
-    public void add(IPlayingCard cardToAdd){
-        myCards.add(cardToAdd);
-    }
+
 
     @Override
     public void shuffle(){
@@ -132,12 +132,21 @@ public class StandardDeck implements IDeckOfCards {
 
     @Override
     public void add(IPlayingCard[] cardsToAdd){
+        for(IPlayingCard aCard : cardsToAdd){
+            add(aCard);
+        }
 
+    }
+    @Override
+    public void add(IPlayingCard cardToAdd){
+        myCards.add(cardToAdd);
     }
 
     @Override
     public void add(IDeckOfCards cardsToAdd){
-
+        while (!cardsToAdd.isEmpty()){
+            add(cardsToAdd.drawCard());
+        }
     }
 
 
